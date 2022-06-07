@@ -28,6 +28,12 @@ class Post(models.Model):
     def __str__(self):
         return self.text
 
+    def __repr__(self):
+        return self.text[:100]
+
+    class Meta:
+        ordering = ['pub_date']
+
 
 class Comment(models.Model):
     author = models.ForeignKey(
